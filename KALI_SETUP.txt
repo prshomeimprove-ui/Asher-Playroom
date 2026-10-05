@@ -1,0 +1,24 @@
+ASHER PLAYROOM - SETUP ON KALI LINUX
+1) Make the folders:
+   mkdir -p ~/asher-playroom/img ~/asher-playroom/sounds
+   cd ~/asher-playroom
+
+2) Easiest: unzip the package (has everything, including the pictures):
+   unzip ~/Downloads/asher-playroom-app.zip -d ~/asher-playroom
+
+   OR paste the code yourself:
+   nano -w index.html
+   (paste with Ctrl+Shift+V, then Ctrl+O, Enter, Ctrl+X)
+   Then copy the 11 pictures (1.jpg ... 11.jpg) into ~/asher-playroom/img/
+
+3) Run it:
+   cd ~/asher-playroom
+   python3 -m http.server 8000
+   Open Firefox or Chromium at: http://localhost:8000
+
+4) Voice on Kali (the browser needs a system voice):
+   sudo apt update && sudo apt install -y speech-dispatcher espeak-ng
+   Then restart the browser.
+
+5) Your own MP3 sounds: put files in ~/asher-playroom/sounds/ and add a line in index.html
+   inside  const SND={ ... }  like:  'Lions are big cats':'sounds/lion.mp3'
